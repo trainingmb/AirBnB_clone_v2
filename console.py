@@ -126,7 +126,7 @@ class HBNBCommand(cmd.Cmd):
         atts = al[2].split(" ")
         for i in atts:
             spl = i.partition("=")
-            v = parseattribute(spl[0],spl[2])
+            v = self.parseattribute(spl[0],spl[2])
             if v is not None:
                 new_instance[spl] = v
         storage.save()
@@ -327,7 +327,7 @@ class HBNBCommand(cmd.Cmd):
         print("Updates an object with new information")
         print("Usage: update <className> <id> <attName> <attVal>\n")
 
-    def parseattribute(name, s):
+    def parseattribute(self, name, s):
         """ Parse an attribute from create """
         typ = types.get(name)
         if typ == int:
