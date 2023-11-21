@@ -332,7 +332,7 @@ class HBNBCommand(cmd.Cmd):
         typ = types.get(name)
         if typ == int:
             if s.isdigit():
-            return int(s)
+                return int(s)
         elif typ == float and "." in s:
             d = 0.0
             try:
