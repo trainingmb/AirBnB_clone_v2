@@ -329,7 +329,7 @@ class HBNBCommand(cmd.Cmd):
 
     def parseattribute(self, name, s):
         """ Parse an attribute from create """
-        typ = types.get(name)
+        typ = self.types.get(name)
         if typ == int:
             if s.isdigit():
                 return int(s)
