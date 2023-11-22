@@ -123,13 +123,17 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
         new_instance = HBNBCommand.classes[al[0]]()
+        key = al[0] + "." + new_instance.id
+        storage.save()
+        new_dict = storage.all()[key]
         atts = al[2].split(" ")
         for i in atts:
             spl = i.partition("=")
             v = self.parseattribute(spl[0],spl[2])
             if v is not None:
-                new_instance[spl] = v
+                new_dict.__dict__.update({spl[0]: v})
         storage.save()
+        new_dict.save()
         print(new_instance.id)
         storage.save()
 
@@ -330,7 +334,7 @@ class HBNBCommand(cmd.Cmd):
     def parseattribute(self, name, s):
         """ Parse an attribute from create """
         typ = self.types.get(name)
-        print("{}<{}>: {}".format(name, typ, s)
+        print("{}<{}>: {}".format(name, typ, s))
         if typ == int:
             if s.isdigit():
                 return int(s)
@@ -341,7 +345,7 @@ class HBNBCommand(cmd.Cmd):
             except:
                 return None
         else:
-            if s[0] == '"' and s[1] == '"':
+            if s[0] == '"' and s[-1] == '"':
                 s = s[1:-1]
                 s.replace("_", " ")
                 return s
