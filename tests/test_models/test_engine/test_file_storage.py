@@ -41,6 +41,19 @@ class test_fileStorage(unittest.TestCase):
         temp = storage.all()
         self.assertIsInstance(temp, dict)
 
+    def test_all_State(self):
+        """Test new all for State Class"""
+        from models.state import State
+        new = BaseModel()
+        new_state = State()
+        storage.new(new_state)
+        storage.save()
+        temp = storage.all(State)
+        for i, j in temp.items():
+            self.assertIsInstance(j, State)
+        storage.delete(new_state)
+        storage.save()
+
     def test_base_model_instantiation(self):
         """ File is not created on BaseModel save """
         new = BaseModel()
