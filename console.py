@@ -334,7 +334,6 @@ class HBNBCommand(cmd.Cmd):
     def parseattribute(self, name, s):
         """ Parse an attribute from create """
         typ = self.types.get(name)
-        print("{}<{}>: {}".format(name, typ, s))
         if typ == int:
             if s.isdigit():
                 return int(s)
@@ -351,7 +350,7 @@ class HBNBCommand(cmd.Cmd):
                 if s[0] == '"':
                     return None
                 for i in range(1, len(s)):
-                    if s[i] == '"' and s[i -1] != '\':
+                    if s[i] == '"' and s[i - 1] != '\\':
                         return None
                 return s
         return None
