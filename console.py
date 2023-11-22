@@ -348,6 +348,11 @@ class HBNBCommand(cmd.Cmd):
             if s[0] == '"' and s[-1] == '"':
                 s = s[1:-1]
                 s.replace("_", " ")
+                if s[0] == '"':
+                    return None
+                for i in range(1, len(s)):
+                    if s[i] == '"' and s[i -1] != '\':
+                        return None
                 return s
         return None
 
