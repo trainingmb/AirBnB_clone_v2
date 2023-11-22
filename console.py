@@ -129,7 +129,7 @@ class HBNBCommand(cmd.Cmd):
         atts = al[2].split(" ")
         for i in atts:
             spl = i.partition("=")
-            v = self.parseattribute(spl[0],spl[2])
+            v = self.parseattribute(spl[0], spl[2])
             if v is not None:
                 new_dict.__dict__.update({spl[0]: v})
         storage.save()
@@ -341,7 +341,7 @@ class HBNBCommand(cmd.Cmd):
             d = 0.0
             try:
                 return float(s)
-            except:
+            except exception as e:
                 return None
         else:
             if s[0] == '"' and s[-1] == '"':
@@ -354,6 +354,7 @@ class HBNBCommand(cmd.Cmd):
                         return None
                 return s
         return None
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
