@@ -106,37 +106,37 @@ if result is None or result == "":
     print("FAIL: empty output")
     
 if "[Place]" not in result or place_id not in result:
-    print("FAIL: wrong output format: \"{}\"".format(result))
+    print("FAIL1: wrong output format: \"{}\"".format(result))
     
 if "city_id" not in result or city_id not in result:
-    print("FAIL: missing new information: \"{}\"".format(result))
+    print("FAIL2: missing new information: \"{}\"".format(result))
     
 if "user_id" not in result or user_id not in result:
-    print("FAIL: missing new information: \"{}\"".format(result))
+    print("FAIL3: missing new information: \"{}\"".format(result))
     
 if "name" not in result or place_name not in result:
-    print("FAIL: missing new information: \"{}\"".format(result))
+    print("FAIL4: missing new information: \"{}\"".format(result))
     
 if "description" not in result or place_desc not in result:
-    print("FAIL: missing new information: \"{}\"".format(result))
+    print("FAIL5: missing new information: \"{}\"".format(result))
     
 if "number_rooms" not in result or str(place_nb_rooms) not in result:
-    print("FAIL: missing new information: \"{}\"".format(result))
+    print("FAIL6: missing new information: \"{}\"".format(result))
     
 if "number_bathrooms" not in result or str(place_nb_bath) not in result:
-    print("FAIL: missing new information: \"{}\"".format(result))
+    print("FAIL7: missing new information: \"{}\"".format(result))
     
 if "max_guest" not in result or str(place_max_guests) not in result:
-    print("FAIL: missing new information: \"{}\"".format(result))
+    print("FAIL8: missing new information: \"{}\"".format(result))
     
 if "price_by_night" not in result or str(place_price) not in result:
-    print("FAIL: missing new information: \"{}\"".format(result))
+    print("FAIL9: missing new information: \"{}\"".format(result))
     
 if "latitude" not in result or str(place_lat) not in result:
-    print("FAIL: missing new information: \"{}\"".format(result))
+    print("FAIL10: missing new information: \"{}\"".format(result))
     
 if "longitude" not in result or str(place_lon) not in result:
-    print("FAIL: missing new information: \"{}\"".format(result))
+    print("FAIL11: missing new information: \"{}\"".format(result))
     
 
 print("OK", end="")
