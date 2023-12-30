@@ -35,7 +35,7 @@ with open("console1.py", "r") as file_i:
             else:
                 file_o.write(line)
 
-import console1
+import console1 as console
 
 """
  Create console
