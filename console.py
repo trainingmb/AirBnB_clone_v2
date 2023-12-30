@@ -344,7 +344,7 @@ class HBNBCommand(cmd.Cmd):
             except exception as e:
                 return None
         else:
-            if s[0] == '"' and s[-1] == '"':
+            if len(s) > 0 and s[0] == '"' and s[-1] == '"':
                 s = s[1:-1]
                 s.replace("_", " ")
                 if s[0] == '"':
