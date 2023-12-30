@@ -348,7 +348,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             if len(s) > 0 and s[0] == '"' and s[-1] == '"':
                 s = s[1:-1]
-                s.replace("_", " ")
+                s = s.replace("_", " ")
                 if s[0] == '"':
                     return None
                 for i in range(1, len(s)):
@@ -358,5 +358,3 @@ class HBNBCommand(cmd.Cmd):
         return None
 
 
-if __name__ == "__main__":
-    HBNBCommand().cmdloop()
