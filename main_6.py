@@ -24,7 +24,7 @@ if os.path.exists(file_path):
 """
 with open("console1.py", "r") as file_i:
     console_lines = file_i.readlines()
-    with open("console.py", "w") as file_o:
+    with open("console1.py", "w") as file_o:
         in_main = False
         for line in console_lines:
             if "__main__" in line:
