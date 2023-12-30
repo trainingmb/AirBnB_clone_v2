@@ -9,6 +9,8 @@ app = Flask(__name__)
 def hello_hbnb():
     """At the home address displays hello hbnh"""
     return "Hello HBNB!"
+
+
 @app.route("/hbnb")
 def hbnb():
     """Adds the route for HBNB"""
