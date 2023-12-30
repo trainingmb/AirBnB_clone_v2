@@ -60,5 +60,5 @@ class FileStorage:
         if obj is not None and type(obj) == dict \
                 and 'id' in obj.keys():
             key = obj.to_dict()['__class__'] + '.' + str(obj.id)
-            self.__objects.pop(key, None)
+            FileStorage.__objects.pop(key, None)
             self.save()
