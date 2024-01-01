@@ -7,7 +7,6 @@ from sqlalchemy.orm import relationship
 from os import environ
 from uuid import uuid4
 from os import getenv
-import sqlalchemy
 
 
 class City(BaseModel, Base):
