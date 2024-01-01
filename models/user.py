@@ -7,12 +7,8 @@ from sqlalchemy import Column, String
 s = "HBNB_TYPE_STORAGE"
 if cs in environ.keys() and environ["HBNB_TYPE_STORAGE"] == "db":
     class User(BaseModel, Base):
-        """This is the class for user
-        Attributes:
-        email: email address
-        password: password for you login
-        first_name: first name
-        last_name: last name
+        """User Class
+        Attributes: email, password, first_name, last_name
         """
         __tablename__ = "users"
         email = Column(String(128), nullable=False)
