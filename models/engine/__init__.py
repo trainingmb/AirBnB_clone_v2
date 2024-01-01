@@ -8,6 +8,7 @@ from models.review import Review
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 from models.user import User
+from os import environ
 
 
 s = "HBNB_TYPE_STORAGE"
