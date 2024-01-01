@@ -5,6 +5,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.scoping import scoped_session
 from sqlalchemy import create_engine
 from models import *
+from models.base_model import BaseModel, Base
 
 
 class DBStorage:
