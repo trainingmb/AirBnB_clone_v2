@@ -21,7 +21,8 @@ class DBStorage:
                                       ":" + os.environ['HBNB_MYSQL_PWD'] +
                                       "@" + os.environ['HBNB_MYSQL_HOST'] +
                                       ":3306/" +
-                                      os.environ['HBNB_MYSQL_DB'])
+                                      os.environ['HBNB_MYSQL_DB'],
+                                      pool_pre_ping=True)
         try:
             if os.environ['HBNB_MYSQL_ENV'] == "test":
                 Base.metadata.drop_all(self.__engine)
