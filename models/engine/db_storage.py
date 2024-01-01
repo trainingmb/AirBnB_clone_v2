@@ -73,4 +73,4 @@ class DBStorage:
         self.__session.delete(obj)
 
     def close(self):
-        self.__session.remove()'__class__'] + '.' + str(obj.id)
+        self.__session.remove()
