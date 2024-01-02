@@ -28,9 +28,9 @@ class BaseModel:
             self.updated_at = datetime.now()
             storage.new(self)
         else:
-            kwargs['updated_at'] = datetime.strptime(kwargs.get('updated_at', str(datetime.now()),
+            kwargs['updated_at'] = datetime.strptime(kwargs.get('updated_at', str(datetime.now())),
                                                      '%Y-%m-%dT%H:%M:%S.%f')
-            kwargs['created_at'] = datetime.strptime(kwargs.get('created_at', str(datetime.now()),
+            kwargs['created_at'] = datetime.strptime(kwargs.get('created_at', str(datetime.now())),
                                                      '%Y-%m-%dT%H:%M:%S.%f')
             del kwargs['__class__']
             self.__dict__.update(kwargs)
