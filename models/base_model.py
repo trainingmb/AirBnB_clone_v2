@@ -35,6 +35,7 @@ class BaseModel:
                                                      '%Y-%m-%dT%H:%M:%S.%f')
             if kwargs.get('created_at', None) is None:
                 kwargs['created_at'] = datetime.now()
+                kwargs['isNew'] = ""
             else:
                 kwargs['created_at'] = datetime.strptime(kwargs.get('created_at', None),
                                                      '%Y-%m-%dT%H:%M:%S.%f')
