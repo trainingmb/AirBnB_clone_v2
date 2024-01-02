@@ -19,7 +19,7 @@ class City(BaseModel, Base):
         state_id = ""
         name = ""
 
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
         """
         Initialize City
         """
