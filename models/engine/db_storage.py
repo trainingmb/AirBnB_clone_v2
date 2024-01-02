@@ -42,12 +42,12 @@ class DBStorage:
         if cls is None:
             for cls_name in self.valid_classes:
                 for instance in self.__session.query(eval(cls_name)):
-                    storage[instance.id] = instance
+                    storage[cls_name + "." + instance.id] = instance
         else:
             if cls not in self.valid_classes:
                 return
             for instance in self.__session.query(eval(cls)):
-                storage[instance.id] = instance
+                storage[cls + "." + instance.id] = instance
 
         return storage
 
@@ -72,7 +72,8 @@ class DBStorage:
 
     def reload(self):
         Base.metadata.create_all(self.__engine)
-        self.__session = scoped_session(sessionmaker(bind=self.__engine))
+        session_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
+        self.__session = scoped_session(session_factory)
 
     def delete(self, obj=None):
         if obj is None:
