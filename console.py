@@ -122,7 +122,6 @@ class HBNBCommand(cmd.Cmd):
         elif al[0] not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
-        key = al[0] + "." + new_instance.id
         print(storage.all())
         new_dict = {}
         atts = al[2].split(" ")
@@ -132,6 +131,7 @@ class HBNBCommand(cmd.Cmd):
             if v is not None:
                 new_dict.__dict__.update({spl[0]: v})
         new_instance = HBNBCommand.classes[al[0]](**new_dict)
+        key = al[0] + "." + new_instance.id
         storage.save()
         new_dict.save()
         print(new_instance.id)
