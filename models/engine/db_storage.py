@@ -53,7 +53,7 @@ class DBStorage:
 
     def new(self, obj):
         self.__session.add(obj)
-        session.refresh(obj)
+        self.__session.refresh(obj)
 
     def save(self):
         try:
