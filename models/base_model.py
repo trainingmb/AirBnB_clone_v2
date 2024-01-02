@@ -38,6 +38,7 @@ class BaseModel:
             else:
                 kwargs['created_at'] = datetime.strptime(kwargs.get('created_at', None),
                                                      '%Y-%m-%dT%H:%M:%S.%f')
+            kwargs['__class__'] = ""
             del kwargs['__class__']
             self.__dict__.update(kwargs)
 
