@@ -129,7 +129,7 @@ class HBNBCommand(cmd.Cmd):
             spl = i.partition("=")
             v = self.parseattribute(spl[0], spl[2])
             if v is not None:
-                new_dict.__dict__.update({spl[0]: v})
+                new_dict.update({spl[0]: v})
         new_instance = HBNBCommand.classes[al[0]](**new_dict)
         key = al[0] + "." + new_instance.id
         storage.save()
