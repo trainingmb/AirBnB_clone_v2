@@ -122,7 +122,6 @@ class HBNBCommand(cmd.Cmd):
         elif al[0] not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
-        print(storage.all())
         new_dict = {}
         atts = al[2].split(" ")
         for i in atts:
