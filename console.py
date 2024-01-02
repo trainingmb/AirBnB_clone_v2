@@ -124,7 +124,7 @@ class HBNBCommand(cmd.Cmd):
             return
         new_instance = HBNBCommand.classes[al[0]]()
         key = al[0] + "." + new_instance.id
-        new_dict.save()
+        new_instance.save()
         print(storage.all())
         storage.save()
         new_dict = storage.all()[key]
